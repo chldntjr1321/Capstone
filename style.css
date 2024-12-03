@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+    background-image: url('sea.jpeg');
+    background-size: cover; /* 화면 크기에 맞게 이미지 조정 */
+    background-position: center; /* 이미지를 화면 중앙에 배치 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    color: #333;
+}
+
+/* 전체 header 스타일 */
+.header {
+    display: flex;
+    justify-content: flex-start; /* 날짜와 날씨를 왼쪽으로 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%;
+    padding: 10px 20px;
+
+    border-bottom: 10px solid transparent; /* 기본 border는 투명 */
+    border-image: linear-gradient(to right, #b769e4, #a8f0f5); /* 그라데이션 색상 변경 */
+    border-image-slice: 1; /* 그라데이션이 border에 맞게 적용되도록 설정 */
+    position: relative;
+}
+
+#current-date {
+    display: inline-block; /* 같은 줄에 나열되도록 설정 */
+    background-color: white; /* 흰색 배경 */
+    padding: 5px; /* 적당한 여백 추가 */
+    border-radius: 5px; /* 둥근 모서리 효과 (선택사항) */
+}
+
+#current-weather {
+    display: inline-block; /* 같은 줄에 나열되도록 설정 */
+    background-color: white; /* 흰색 배경 */
+    padding: 5px; /* 적당한 여백 추가 */
+    border-radius: 5px; /* 둥근 모서리 효과 (선택사항) */
+}
+
+/* 날짜와 날씨 각각의 항목에 배경색 추가 */
+.date-time-item {
+    background-color: #fff; /* 각 항목의 배경색 */
+    padding: 5px 10px;
+    border-radius: 5px; /* 각 항목의 테두리 둥글게 */
+    display: inline-block; /* 텍스트만 감싸는 효과 */
+}
+
+/* 실시간 상수도 모니터링 시스템 제목 배경색 */
+#header-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #b769e4, #a8f0f5); /* 그라데이션 배경 */
+    color: white; /* 글자색 */
+    padding: 5px 20px;
+    border-radius: 5px; /* 테두리 둥글게 */
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 왼쪽, 중앙, 오른쪽 그리드 */
+    grid-gap: 3px;
+    padding: 3px;
+}
+
+.water-quality, .water-pressure {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* 동일한 선 두께를 보장하기 위해 */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.data-card {
+    margin-top: 20px;           /* 아래쪽 간격을 주기 위해 margin 추가 */
+}
+
+.diagram {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    padding: 10px; /* 이미지와 다른 요소들 사이 간격 조정 */
+}
+
+.diagram img {
+    max-width: 100%; /* 이미지의 최대 너비를 80%로 설정 (필요시 수정) */
+    height: auto; /* 비율에 맞춰 자동으로 높이 조정 */
+    display: block; /* 이미지 아래 불필요한 공백 제거 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.charts {
+    grid-column: span 3; /* 차트 영역을 그리드에서 3열로 확장 */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap; /* 차트가 화면 크기에 맞게 자동 줄바꿈되도록 설정 */
+}
+
+.chart {
+    width: 30%; /* 두 개의 차트가 한 줄에 나란히 보이도록 설정 */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* 아래쪽 간격 추가 */
+}
+
+.chart canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#water-level,
+#turbidity,
+#chlorine,
+#ph-value,
+#pressure,
+#water-flux {
+    font-size: 30px; /* 원하는 폰트 크기로 설정 */
+}
+
+.pink {
+    color: #b769e4;
+}
+
+.mint {
+    color: rgb(76, 187, 150);
+}
+
+.orange {
+    color: rgb(255, 183, 49);
+}
